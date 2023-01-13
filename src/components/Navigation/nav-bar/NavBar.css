@@ -1,0 +1,40 @@
+.app-nav-bar {
+    z-index: 200;
+    position:fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    padding: 0.1rem;
+}
+
+.btn-dots {
+    color: white;
+    font-size: 16px;
+    padding: 0.7rem;
+
+}
+
+.btn-dots span{
+    font-size: 16px;
+    padding-left: 1rem;
+
+}
+
+.app-nav-bar ul {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    padding: 0.5rem;
+    display: inline-block;
+}
+.app-nav-bar ul li {
+    display: inline-block;
+    padding: 0 1rem;
+    color: white;
+    font-size: 16px;
+}
+
+.app-nav-bar ul li .navbar-avatar {
+    width: 1.5rem;
+    height: 1.5rem;
+}

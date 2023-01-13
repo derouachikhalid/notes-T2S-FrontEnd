@@ -1,0 +1,13 @@
+div.FormHeader {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #56969f66;
+    color: #56969fdd;
+    font-size: 28px;
+    padding: 0.2rem 3rem;
+}
+
+div i {
+    font-size: 28px;
+    padding: 0 2rem;
+}

@@ -1,0 +1,22 @@
+div.OrderBar {
+    display: flex;
+    flex-direction: row;
+    margin: 0rem 1rem;
+}
+
+div.LeftOrderSide {
+    width: 20%;
+    justify-content: flex-start;
+}
+
+div.MiddleOrderSide {
+    width: calc(100% - 40%);
+    display: flex;
+    justify-content: center;
+}
+
+div.RightOrderSide {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+}

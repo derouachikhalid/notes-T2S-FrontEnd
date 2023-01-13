@@ -1,0 +1,14 @@
+button.ActionButton {
+    background-color: #56969f66;
+    color: #fff;
+    border: 1px solid #56969faa;
+    border-radius: 3px;
+    margin: 0 0.2rem;
+    height: 1.6rem;
+    font-weight: 800;
+}
+
+
+button.ActionButton:hover {
+    background-color: #56969faa;
+    }

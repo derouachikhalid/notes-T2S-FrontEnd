@@ -1,0 +1,7 @@
+div.ActionsBar {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #56969f66;
+    border-top: 1px solid #56969f66;
+    padding: 2px 2rem;
+}
