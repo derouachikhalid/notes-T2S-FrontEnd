@@ -5,8 +5,10 @@ import React from 'react';
 import "./OrderBar.css"
 import IconButton from '../../../UI/UI-Form/icon-button/IconButton';
 import StateButton from '../../../UI/UI-Form/state-button/StateButton';
+import { Link } from 'react-router-dom';
 
 const OrderBar = (props) => {
+    const path = document.location.pathname;
     return (
         <div className='OrderBar'>
             <div className='LeftOrderSide'>
@@ -22,10 +24,13 @@ const OrderBar = (props) => {
             />
                 </span>
             
-<span><IconButton
+            <Link to={path==="/notes" ?"/createNote" : "createReport"}>
+            <span><IconButton
             className="success-icon-button"
             icon= {<FontAwesomeIcon icon={faPlus}/>}
             /></span>
+            </Link>
+            
             
 <span><IconButton
             className="danger-icon-button"

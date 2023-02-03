@@ -1,0 +1,5 @@
+form.FormBody {
+    overflow-y: scroll;
+    min-height: 60vh;
+    margin: 0.5rem 3rem;
+}

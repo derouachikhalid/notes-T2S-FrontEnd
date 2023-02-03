@@ -6,11 +6,11 @@ import './PageHeader.css'
 const links = [
     {
         label : "Report",
-        to : "/report"
+        to : "/reports"
     },
     {
         label : "Notes de Frais",
-        to : "/notes-de-frais"
+        to : "/notes"
     },
 ]
 

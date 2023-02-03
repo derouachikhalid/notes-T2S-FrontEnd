@@ -1,0 +1,101 @@
+div.Field {
+    width: 90%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    margin: 0.5rem auto;
+}
+
+div.Field input{
+    outline: none;
+    width: 50%;
+    padding: 3px 6px;
+    height: 1.1rem;
+    border: 1px solid #56969f;
+}
+
+div.Field input:focus{
+    border: 1px solid #155d66;
+}
+
+div.Field select:focus{
+    border: 1px solid #155d66;
+}
+
+div.Field textarea:focus{
+    border: 1px solid #155d66;
+}
+
+div.Field input:disabled{
+    outline: none;
+    background-color: grey;
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+div.Field input:required{
+    color: red;
+    border: 2px solid red;
+    opacity: 0.9;
+}
+
+div.Field textarea{
+    outline: none;
+    width: 50%;
+    padding: 3px 6px;
+    height: 3rem;
+    border: 1px solid #56969f;
+}
+
+div.Field textarea:disabled{
+    outline: none;
+    background-color: grey;
+    opacity: 0.4;
+}
+
+div.Field textarea:required{
+    color: red;
+    border: 2px solid red;
+    opacity: 0.9;
+}
+
+
+
+div.Field select{
+    outline: none;
+    width: 51.42%;
+    padding: 3px 6px;
+    height: 1.7rem;
+    border: 1px solid #56969f;
+}
+
+div.Field select option {
+    
+    padding: 3px 6px;
+    height: 2rem;
+}
+
+div.Field select:disabled{
+    outline: none;
+    background-color: grey;
+    opacity: 0.4;
+}
+
+div.Field select:required{
+    color: red;
+    border: 2px solid red;
+    opacity: 0.9;
+}
+
+div.Field label{
+    width: 20%;
+    margin: 0 3px;
+    font-size: large;
+    color: #56969f;
+}
+
+@media (max-width : 968px) {
+    div.Field {
+        width: 100%;
+    }
+}

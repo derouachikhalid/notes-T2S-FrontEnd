@@ -6,16 +6,16 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FormBody from "../../../components/UI/UI-Form/Form/form-body/FormBody";
 import Field from "../../../components/UI/UI-Form/field/Field";
-import { createNoteDeFrais, getCategories, updateNote } from "../Services";
+import { getCategories, getNoteDeFrais, updateNote } from "../Services";
 
 
-
-class AddNote extends Component {
+class UpdateNote extends Component {
     
+
     state = {
         note : {
             id: null,
-            description: undefined,
+            description: null,
             unit_price: 0,
             quantity: 0,
             Date : "",
@@ -25,7 +25,8 @@ class AddNote extends Component {
                 name : null,
                 unit_price :null
             },
-          },
+            
+        },
         categories : [],
         saving : false
     }
@@ -33,10 +34,14 @@ class AddNote extends Component {
 
     async componentDidMount () {
 
+        const id = this.props.match.params.id;
         const fetchedCategories = await getCategories();
+         const fetchedNote = await getNoteDeFrais(id);
+         console.log(fetchedNote)
          this.setState({
              ...this.state,
-             categories : fetchedCategories
+             categories : fetchedCategories,
+             note : fetchedNote
          })
 
     }
@@ -85,34 +90,19 @@ class AddNote extends Component {
     }
 
     handleSubmit = async (e) => {
-        
 
-        if(this.state.note.id === null) {
-            const newId = await createNoteDeFrais(this.state.note);
-            if(newId) {
-                this.setState({
-                    ...this.state,
-                    note : {
-                        ...this.state.note,
-                        id : newId
-                    }
-                })
-            }
-        }
-
-        if (this.state.note.id !== null) {
-            console.log(this.state.note.id)
-            updateNote(this.state.note.id,this.state.note)
-        }
-        
-        // await this.setState({
-        //     ...this.state,
-        //     saving : true
-        // })
-        
+        const id = this.props.match.params.id;
+        updateNote(id,this.state.note)
+            
+           
     }
 
+    
+
     render(){
+
+        // const {id} = this.props.match.params;
+        // console.log(id)
         return (
             <Aux>
                 <FormHeader icon={<FontAwesomeIcon icon={faPlus}/>}> Add Note :</FormHeader>
@@ -128,7 +118,7 @@ class AddNote extends Component {
                     <Field
                     name="unit_price"
                     label="Unit price :"
-                    disabled={this.state.note.category.unit_price !== null}
+                    disabled={(this.state.note.category) ? this.state.note.category.unit_price !== null : false}
                     value={this.state.note.unit_price}
                     onChange={this.handleChange}
                     onSubmit={this.handleSubmit}
@@ -164,7 +154,6 @@ class AddNote extends Component {
                     <Field
                     name="category"
                     label="Category :"
-                    value={this.state.note.category}
                     onChange={this.handleChange}
                     onSubmit={this.handleSubmit}
                     type="enum"
@@ -180,4 +169,4 @@ class AddNote extends Component {
     }
 }
 
-export default AddNote;
+export default UpdateNote;
